@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ICE10
+namespace ICE10A
 {
 
     public partial class SplashForm : Form

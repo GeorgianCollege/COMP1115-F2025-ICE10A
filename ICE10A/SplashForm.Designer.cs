@@ -1,4 +1,4 @@
-﻿namespace ICE10
+﻿namespace ICE10A
 {
     partial class SplashForm
     {

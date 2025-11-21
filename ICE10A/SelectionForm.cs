@@ -1,7 +1,6 @@
 using System;
-using ICE10A;
 
-namespace ICE10
+namespace ICE10A
 {
     enum Career
     {
