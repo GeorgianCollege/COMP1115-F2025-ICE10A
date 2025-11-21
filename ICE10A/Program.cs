@@ -11,6 +11,13 @@ namespace ICE10A
         About
     }
 
+    public enum ToastType
+    {
+        Success,
+        Danger,
+        Warning,
+        Info
+    }
 
     internal static class Program
     {

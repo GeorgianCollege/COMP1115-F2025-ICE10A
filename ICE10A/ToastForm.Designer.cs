@@ -47,6 +47,7 @@
             // ToastTimer
             // 
             ToastTimer.Interval = 1500;
+            ToastTimer.Tick += ToastTimer_Tick;
             // 
             // ToastForm
             // 
@@ -60,7 +61,7 @@
             Controls.Add(Label_Message);
             Font = new Font("Calibri", 14F);
             FormBorderStyle = FormBorderStyle.None;
-            Margin = new Padding(4, 4, 4, 4);
+            Margin = new Padding(4);
             MinimumSize = new Size(700, 100);
             Name = "ToastForm";
             ShowIcon = false;
@@ -68,6 +69,7 @@
             StartPosition = FormStartPosition.Manual;
             Text = "ToastForm";
             TopMost = true;
+            Shown += ToastForm_Shown;
             ResumeLayout(false);
             PerformLayout();
         }
