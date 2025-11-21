@@ -85,5 +85,21 @@ namespace ICE10
             writer.WriteLine(Settings.Default.Career);
         }
 
+        public static void LoadCharacter(string path)
+        {
+            using StreamReader reader = new StreamReader(path);
+
+            Settings.Default.AGL = reader.ReadLine();
+            Settings.Default.STR = reader.ReadLine();
+            Settings.Default.VGR = reader.ReadLine();
+            Settings.Default.PER = reader.ReadLine();
+            Settings.Default.INT = reader.ReadLine();
+            Settings.Default.WIL = reader.ReadLine();
+            Settings.Default.CharacterName = reader.ReadLine();
+            Settings.Default.Species = reader.ReadLine();
+            Settings.Default.Career = reader.ReadLine();
+        }
+
+
     }
 }
