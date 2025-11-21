@@ -46,7 +46,7 @@
             // 
             // ToastTimer
             // 
-            ToastTimer.Interval = 1500;
+            ToastTimer.Interval = 3000;
             ToastTimer.Tick += ToastTimer_Tick;
             // 
             // ToastForm

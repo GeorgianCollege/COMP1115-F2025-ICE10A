@@ -24,6 +24,7 @@ namespace ICE10A
     {
         // Declaring Form Variables
         public static SplashForm SplashForm;
+        public static StartForm StartForm;
         public static SelectionForm SelectionForm;
         public static NextForm NextForm;
         public static FinalForm FinalForm;
@@ -47,6 +48,7 @@ namespace ICE10A
             // Initializing the Form Variables
             // by instantiating objects of the related form types
             SplashForm = new SplashForm();
+            StartForm = new StartForm();
             SelectionForm = new SelectionForm();
             NextForm = new NextForm();
             FinalForm = new FinalForm();
@@ -56,6 +58,7 @@ namespace ICE10A
             Forms =
             [
                 SplashForm,
+                StartForm,
                 SelectionForm,
                 NextForm,
                 FinalForm,
@@ -98,7 +101,7 @@ namespace ICE10A
             writer.WriteLine(Settings.Default.Career);
         }
 
-        public static void LoadCharacter(string path)
+        public static bool LoadCharacter(string path)
         {
             try
             {
@@ -148,19 +151,23 @@ namespace ICE10A
                 Settings.Default.CharacterName = CharacterName;
                 Settings.Default.Species = Species;
                 Settings.Default.Career = Career;
+                return true;
 
             }
             catch (FileNotFoundException e)
             {
                 ShowToast("File Not Found: " + e.Message, ToastType.Danger);
+                return false;
             }
             catch (FileFormatException e)
             {
                 ShowToast("Format Error: " + e.Message, ToastType.Danger);
+                return false;
             }
             catch (Exception e)
             {
                 ShowToast("Error: " + e.Message, ToastType.Danger);
+                return false;
             }
 
         }

@@ -493,6 +493,7 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Selection Form";
             FormClosing += SelectionForm_FormClosing;
+            Load += SelectionForm_Load;
             Panel_PrimaryAttributes.ResumeLayout(false);
             Panel_PrimaryAttributes.PerformLayout();
             Panel_SecondaryAttributes.ResumeLayout(false);

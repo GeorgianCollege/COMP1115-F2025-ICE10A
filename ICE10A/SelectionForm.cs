@@ -220,5 +220,42 @@ namespace ICE10A
         {
             Program.ConfirmExit(e);
         }
+
+        private void SelectionForm_Load(object sender, EventArgs e)
+        {
+            if (Program.HasLoadedCharacter)
+            {
+                TextBox_AGL.Text = Settings.Default.AGL;
+                TextBox_STR.Text = Settings.Default.STR;
+                TextBox_VGR.Text = Settings.Default.VGR;
+                TextBox_PER.Text = Settings.Default.PER;
+                TextBox_INT.Text = Settings.Default.INT;
+                TextBox_WIL.Text = Settings.Default.WIL;
+                ComboBox_Career.SelectedItem = Settings.Default.Career;
+                SelectedSpecies = Settings.Default.Species;
+                TextBox_Name.Text = Settings.Default.CharacterName;
+
+                switch (SelectedSpecies)
+                {
+                    case "Human":
+                        RadioButton_Human.Checked = true;
+                        break;
+                    case "Robot":
+                        RadioButton_Robot.Checked = true;
+                        break;
+                    case "Alien":
+                        RadioButton_Alien.Checked = true;
+                        break;
+                    default:
+                        RadioButton_Human.Checked = true;
+                        break;
+                }
+
+                ComputeSecondaryAttributes();
+
+                Program.ShowToast("Character Loaded!");
+            }
+
+        }
     }
 }
