@@ -6,6 +6,7 @@ namespace ICE10A
     {
         Splash,
         Start,
+        Selection,
         Next,
         Final,
         About
@@ -34,6 +35,9 @@ namespace ICE10A
         // Declaring a bool that will help us exit
         public static bool IsExiting = false;
 
+        public static bool HasLoadedCharacter = false;
+
+        public static string DownloadsFolder = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), "Downloads");
 
         [STAThread]
         static void Main()
@@ -148,19 +152,17 @@ namespace ICE10A
             }
             catch (FileNotFoundException e)
             {
-                MessageBox.Show("File Not Found: " + e.Message, "File Not Found",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                ShowToast("File Not Found: " + e.Message, ToastType.Danger);
             }
             catch (FileFormatException e)
             {
-                MessageBox.Show("Format Error: " + e.Message, "Format Error",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                ShowToast("Format Error: " + e.Message, ToastType.Danger);
             }
             catch (Exception e)
             {
-                MessageBox.Show("Error: " + e.Message, "Error",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                ShowToast("Error: " + e.Message, ToastType.Danger);
             }
+
         }
 
         /// <summary>

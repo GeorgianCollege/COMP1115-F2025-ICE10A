@@ -36,9 +36,10 @@
             // Label_Title
             // 
             Label_Title.Font = new Font("Calibri", 50F, FontStyle.Bold);
-            Label_Title.Location = new Point(12, 56);
+            Label_Title.Location = new Point(22, 119);
+            Label_Title.Margin = new Padding(6, 0, 6, 0);
             Label_Title.Name = "Label_Title";
-            Label_Title.Size = new Size(776, 86);
+            Label_Title.Size = new Size(1205, 183);
             Label_Title.TabIndex = 0;
             Label_Title.Text = "Character Generator";
             Label_Title.TextAlign = ContentAlignment.MiddleCenter;
@@ -51,12 +52,13 @@
             // 
             // SplashForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(1250, 670);
             ControlBox = false;
             Controls.Add(Label_Title);
             FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(6, 6, 6, 6);
             Name = "SplashForm";
             Opacity = 0.7D;
             SizeGripStyle = SizeGripStyle.Hide;
