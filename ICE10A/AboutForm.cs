@@ -15,11 +15,11 @@ namespace ICE10
         {
             InitializeComponent();
             this.Text = String.Format("About {0}", AssemblyTitle);
-            this.labelProductName.Text = AssemblyProduct;
-            this.labelVersion.Text = String.Format("Version {0}", AssemblyVersion);
-            this.labelCopyright.Text = AssemblyCopyright;
-            this.labelCompanyName.Text = AssemblyCompany;
-            this.textBoxDescription.Text = AssemblyDescription;
+            this.Label_ProductName.Text = AssemblyProduct;
+            this.Label_Version.Text = String.Format("Version {0}", AssemblyVersion);
+            this.Label_Copyright.Text = AssemblyCopyright;
+            this.Label_CompanyName.Text = AssemblyCompany;
+            this.TextBox_Description.Text = AssemblyDescription;
         }
 
         #region Assembly Attribute Accessors
@@ -101,5 +101,10 @@ namespace ICE10
             }
         }
         #endregion
+
+        private void Button_OK_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

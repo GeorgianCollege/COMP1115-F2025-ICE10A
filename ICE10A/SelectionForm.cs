@@ -216,5 +216,10 @@ namespace ICE10
             SelectedSpecies = radioButton.Text;
 
         }
+
+        private void SelectionForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Program.ConfirmExit(e);
+        }
     }
 }

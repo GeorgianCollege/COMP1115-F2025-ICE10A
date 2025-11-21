@@ -38,5 +38,10 @@ namespace ICE10
             Program.Forms[(int)FormType.Final].Show();
             Hide();
         }
+
+        private void NextForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Program.ConfirmExit(e);
+        }
     }
 }
