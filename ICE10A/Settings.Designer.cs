@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ICE10 {
+namespace ICE10A {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
