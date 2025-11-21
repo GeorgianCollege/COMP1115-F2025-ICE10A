@@ -163,6 +163,29 @@ namespace ICE10A
             }
         }
 
+        /// <summary>
+        /// This method shows a toast message at the top center of the active form.
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="type"></param>
+        public static void ShowToast(string message, ToastType type = ToastType.Success)
+        {
+            const int padding = 20;
+
+            ToastForm toast = new ToastForm(message, type);
+
+            // Determine the area to center the toast in
+            Rectangle area = Form.ActiveForm.Bounds;
+
+            // Calculate the position to center the toast at the top of the area
+            int x = area.Left + (area.Width - toast.Width) / 2;
+            int y = area.Top + padding;
+
+            // Set the location of the toast and show it
+            toast.Location = new Point(x, y);
+            toast.TopMost = true;
+            toast.Show(Form.ActiveForm);
+        }
 
     }
 }
